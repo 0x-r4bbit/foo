@@ -4,31 +4,34 @@
         <meta charset="UTF-8">
         <title>Angular Fireside Chats</title>
 
-        <!-- ES6-related imports -->
-        <script src="lib/traceur-runtime.js"></script>
-        <script src="lib/es6-module-loader-sans-promises.src.js"></script>
-        <script src="lib/extension-register.js"></script>
-        <script>
-            register(System);
-        </script>
-
-        <!-- Angular2-related imports -->
-        <script src="lib/zone.js"></script>
-        <script src="lib/long-stack-trace-zone.js"></script>
-        <script src="lib/angular2.js"></script>
-
-        <!-- other libs -->
-        <script src="lib/fetch.js"></script>
-
         <!-- stylesheets -->
         <link rel="stylesheet" href="lib/materialize.css">
         <link rel="stylesheet" href="app.css">
         <link rel="stylesheet" href="chatter-card.css">
-
-        <script>System.import('app')</script>
     </head>
 
     <body>
         <fireside-chats-app></fireside-chats-app>
     </body>
+    <script src="lib/traceur-runtime.js"></script>
+    <script src="lib/system-csp-production.src.js"></script>
+    <script src="lib/Reflect.js"></script>
+
+    <!-- Angular2-related imports -->
+    <script src="lib/zone.js"></script>
+    <script src="lib/long-stack-trace-zone.js"></script>
+
+    <!-- other libs -->
+    <script src="lib/fetch.js"></script>
+
+    <script>
+        //configure system loader
+        System.config({defaultJSExtensions: true});
+    </script>
+    <script src="lib/angular2.js"></script>
+
+    <script>
+        //bootstrap the Angular2 application
+        System.import('app').catch(console.log.bind(console));
+    </script>
 </html>

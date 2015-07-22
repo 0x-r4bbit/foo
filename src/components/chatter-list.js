@@ -2,9 +2,7 @@ import {Component, View} from 'angular2/angular2';
 
 @Component({
     selector: 'chatter-list',
-    properties: {
-        title: 'title'
-    }
+    properties: ['title']
 })
 
 @View({

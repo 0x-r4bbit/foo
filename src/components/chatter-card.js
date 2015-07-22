@@ -1,17 +1,13 @@
-import {Component, View, If} from 'angular2/angular2';
+import {Component, View, NgIf} from 'angular2/angular2';
 
 @Component({
     selector: 'chatter-card',
-    properties: {
-        item: 'item'
-    }
+    properties: ['item']
 })
-
 @View({
     templateUrl: 'chatter-card.html',
-    directives: [If]
+    directives: [NgIf]
 })
-
 export class ChatterCard {
     showDetails: boolean;
 
