@@ -5,7 +5,7 @@ import {Component, View, NgIf} from 'angular2/angular2';
     properties: ['item']
 })
 @View({
-    templateUrl: 'chatter-card.html',
+    templateUrl: 'components/chatter-card.html',
     directives: [NgIf]
 })
 export class ChatterCard {
